@@ -78,6 +78,7 @@ replace `var'=1 if assets_`y'=="`var'"
 drop assets_*
 
 *Livestock
+foreach x in cows_bulls sheep chickens pigs {
 foreach x in cows_bulls horses goats sheep chickens pigs {
 capture rename owned_`x'* `x'_owned
 capture label var `x'_owned 			"Total number of `x' owned"
@@ -172,11 +173,6 @@ label define providers_list 11 govt_hosp 12 govt_health_center 13 FP_clinic 14 m
 	encode fp_provider_rw, gen(fp_provider_rwv2) lab(providers_list)
 	
 	capture encode fp_provider_rw, gen(fp_provider_rwv2) lab(providers_list)
-	
-*FQ Language
-capture label define language_list 1 english 2 hausa 3 igbo 4 yoruba 5 pidgin 96 other
-capture encode FQsurvey_language, gen(FQsurvey_languagev2) lab(language_list)
-capture label var FQsurvey_language "Language of Female interview"
 
 	
 ***************************************************************************************************

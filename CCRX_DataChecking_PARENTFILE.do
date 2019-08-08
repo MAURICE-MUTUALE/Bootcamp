@@ -52,11 +52,11 @@ set maxvar 30000
 *******************************************************************************
 *BEFORE USE THE FOLLOWING NEED TO BE UPDATED:
 *Country/Round/Abbreviations
-global Country US	 
-global Round Round1
-global round 1
-global country US
-global CCRX USR1
+global Country CD	 
+global Round Round4
+global round 4
+global country CD
+global CCRX CDR4
 
 *Locals (Dont need to Update)
 local Country "$Country"
@@ -797,10 +797,6 @@ capture collapse (count) metatag if locationAccuracy>6 | locationAccuracy==., by
 	}
 restore
 
-**GPS Spatial data error-checks - By RE & Full list   
-preserve
-do "$dofiledir/`hhq_monit'.do"
-restore
 
 **Repeat for Female Accuracy
 
